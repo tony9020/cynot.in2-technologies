@@ -10,9 +10,32 @@ import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import Card from '../components/Card';
 
+const benefits = [
+  {
+    title: 'Proven Track Record',
+    content: 'Our experience means we understand both B2B and B2C market needs.',
+  },
+  {
+    title: 'Tailored Solutions',
+    content: 'A deep understanding of various industries lets us deliver customised solutions.',
+  },
+  {
+    title: 'Cost-Effective',
+    content: 'We optimise resources, reducing project timelines and costs.',
+  },
+  {
+    title: 'Timely Delivery',
+    content: 'Years of managing complex projects mean efficient, prioritised execution.',
+  },
+  {
+    title: 'Ongoing Support',
+    content: 'Our commitment extends beyond completion through comprehensive support services.',
+  },
+];
+
 const Home = () => {
   useEffect(() => {
-    document.title = "Cynot - Empowering Innovations, Crafting Journeys";
+    document.title = "Cynot Technologies | Technology that drives business growth";
   }, []);
 
   const { ref: aboutRef, inView: aboutInView } = useInView({
@@ -38,10 +61,11 @@ const Home = () => {
   return (
     <>
       <Hero
-        title="Empowering Innovations, Crafting Journeys"
-        description="Transformative IT solutions, premium living spaces, and immersive travel experiences all under one visionary brand."
+        title="Technology that drives business growth."
+        subtitle="IT Solutions Provider"
+        description="Software, web, design, digital marketing, creative and IT support services, all under one roof and tailored for B2B and B2C businesses."
         primaryAction={{
-          text: "Explore Solutions",
+          text: "Explore Services",
           to: "/services",
         }}
         secondaryAction={{
@@ -92,36 +116,36 @@ const Home = () => {
             <div>
               <img 
                 src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="About Cynot" 
+                alt="About Cynot Technologies" 
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div>
-              <span className="text-primary-400 font-bold text-md uppercase tracking-wider">About Us</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Our Expertise, Your Experience</h2>
+              <span className="text-primary-400 font-bold text-md uppercase tracking-wider">Company Overview</span>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">Seasoned people. Tailored solutions.</h2>
               <p className="text-neutral-700 mb-6">
-                Cynot is a dynamic conglomerate operating across three specialized sectors: cutting-edge technology solutions, premium residential developments, and immersive travel experiences.
+                Cynot Technologies is a seasoned IT solutions provider specialising in software development, web design and development, UI/UX and graphic design, digital marketing, creative production and IT support services. With 7+ years of combined experience across B2B and B2C sectors, our team delivers tailored technology that drives business growth and success.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-600 mr-3 mt-1" size={20} />
                   <div>
-                    <h3 className="font-semibold text-lg">Innovation at Core</h3>
-                    <p className="text-neutral-600">We pursue innovative solutions that challenge conventions and set new standards in each of our divisions.</p>
+                    <h3 className="font-semibold text-lg">01 · Built by veterans</h3>
+                    <p className="text-neutral-600">Founded by industry veterans with deep backgrounds in B2B and B2C IT services.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-600 mr-3 mt-1" size={20} />
                   <div>
-                    <h3 className="font-semibold text-lg">Customer-Centric Approach</h3>
-                    <p className="text-neutral-600">Every service and product is designed with our customers' needs and expectations at the forefront.</p>
+                    <h3 className="font-semibold text-lg">02 · Experienced team</h3>
+                    <p className="text-neutral-600">Professionals with hands-on experience in software development, web technologies and IT support.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle className="text-primary-600 mr-3 mt-1" size={20} />
                   <div>
-                    <h3 className="font-semibold text-lg">Sustainable Practices</h3>
-                    <p className="text-neutral-600">We're committed to environmentally responsible operations across all our business divisions.</p>
+                    <h3 className="font-semibold text-lg">03 · Customer-centric</h3>
+                    <p className="text-neutral-600">We understand both business and consumer markets, so we meet and exceed client expectations.</p>
                   </div>
                 </div>
               </div>
@@ -146,38 +170,38 @@ const Home = () => {
       >
         <div className="container">
           <SectionTitle
-            title="Featured Projects"
+            title="Selected Work"
             subtitle="Our Work"
             center
           >
             <p className="text-center">
-              Take a look at some of our most impactful work across all three divisions. Each project demonstrates our commitment to excellence and innovation.
+              A snapshot of the platforms, migrations and growth work we deliver across our eight digital service areas.
             </p>
           </SectionTitle>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card
               image="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              title="Enterprise Dashboard System"
-              content="Custom analytics platform for a Fortune 500 company that increased operational efficiency by 30%."
+              title="Admin Portals & Dashboards"
+              content="Custom web applications, admin portals and reporting dashboards built on modern technologies and integrated with the tools you already use."
               hoverEffect={true}
               to="/portfolio"
               hasArrow={true}
               className="group"
             />
             <Card
-              image="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              title="Oceanview Residences"
-              content="Luxury eco-friendly residential complex featuring smart home technology and sustainable materials."
+              image="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              title="E-commerce & Cloud Platforms"
+              content="Responsive storefronts, CMS implementations and cloud setups tuned for performance, search visibility and day-to-day reliability."
               hoverEffect={true}
               to="/portfolio"
               hasArrow={true}
               className="group"
             />
             <Card
-              image="https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              title="Nordic Adventure Tours"
-              content="Customized expedition packages through Scandinavia's most breathtaking landscapes and cultural sites."
+              image="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              title="Brand, Design & Growth"
+              content="Design systems, brand identity, social creatives and campaign performance tracking that keep your marketing converting."
               hoverEffect={true}
               to="/portfolio"
               hasArrow={true}
@@ -193,71 +217,45 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Why Choose Us */}
       <section 
         ref={testimonialsRef} 
         className={`section bg-neutral-50 ${testimonialsInView ? 'fade-in' : 'opacity-0'}`}
       >
         <div className="container">
           <SectionTitle
-            title="What Our Clients Say"
-            subtitle="Testimonials"
+            title="Benefits of Choosing Cynot Technologies"
+            subtitle="Why Choose Us"
             center
           >
             <p className="text-center">
-              Don't just take our word for it. Here's what our clients have to say about their experiences working with Cynot.
+              Experience, tailored solutions and support that continues long after launch.
             </p>
           </SectionTitle>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="text-primary-600">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-xl">★</span>
-                  ))}
+            {benefits.map((benefit, index) => (
+              <div key={benefit.title} className="bg-white p-6 rounded-lg shadow-md h-full">
+                <div className="flex items-center mb-4">
+                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-600 text-white font-bold">
+                    {index + 1}
+                  </span>
+                  <h3 className="ml-4 text-xl font-semibold">{benefit.title}</h3>
                 </div>
+                <p className="text-neutral-700">{benefit.content}</p>
               </div>
-              <p className="italic mb-6 text-neutral-700">
-                "Cynot Technologies transformed our outdated systems with a custom solution that perfectly met our needs. Their team was professional, responsive, and delivered beyond our expectations."
-              </p>
+            ))}
+            <div className="bg-neutral-900 p-6 rounded-lg shadow-md h-full flex flex-col justify-between">
               <div>
-                <p className="font-semibold">Sarah Johnson</p>
-                <p className="text-sm text-neutral-500">CTO, Innovate Corp</p>
+                <h3 className="text-xl font-semibold text-white mb-4">End-to-end, B2B &amp; B2C</h3>
+                <p className="text-neutral-300">
+                  Eight digital service areas, from first build to ongoing support — so one team stays accountable for the whole result.
+                </p>
               </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="text-primary-600">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-xl">★</span>
-                  ))}
-                </div>
-              </div>
-              <p className="italic mb-6 text-neutral-700">
-                "Our experience with Cynot Homes was exceptional from start to finish. The attention to detail in our custom home was impeccable, and the smart home features have made our lives so much easier."
-              </p>
-              <div>
-                <p className="font-semibold">Michael & Lisa Thompson</p>
-                <p className="text-sm text-neutral-500">Homeowners</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <div className="text-primary-600">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-xl">★</span>
-                  ))}
-                </div>
-              </div>
-              <p className="italic mb-6 text-neutral-700">
-                "The cultural tour package that Cynot arranged for our team was life-changing. Every detail was perfectly arranged, and the experiences were authentic and memorable."
-              </p>
-              <div>
-                <p className="font-semibold">David Chen</p>
-                <p className="text-sm text-neutral-500">HR Director, Global Enterprises</p>
+              <div className="mt-6">
+                <Button to="/contact" variant="primary" icon={<ArrowRight size={16} />} iconPosition="right">
+                  Let's Talk
+                </Button>
               </div>
             </div>
           </div>
@@ -271,9 +269,9 @@ const Home = () => {
       >
         <div className="container">
           <div className="flex flex-col items-center text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Experience?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's build something that works for you.</h2>
             <p className="text-neutral-300 max-w-2xl mb-8">
-              Whether you need innovative tech solutions, are looking for your dream home, or planning your next adventure, we're here to help you every step of the way.
+              Tell us what you need — software, a website, a brand refresh, a campaign or day-to-day IT support — and we'll shape the scope and the right pricing model around it.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button to="/contact" variant="primary" size="lg">

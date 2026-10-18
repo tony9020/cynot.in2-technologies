@@ -5,7 +5,7 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const Logo = ({ color = 'dark', size = 'md' }: LogoProps) => {
+const Logo = ({ size = 'md' }: LogoProps) => {
   const sizeClasses = {
     sm: 'h-4',
     md: 'h-6',

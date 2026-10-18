@@ -13,12 +13,12 @@ const Footer = () => {
           <div>
           <div className="flex items-center"> 
             <Logo color="light" size="lg" />
-            <span className={`ml-2 text-3xl font-bold text-white`}>
-            CYNOT
+            <span className={`ml-2 text-2xl font-bold text-white`}>
+            CYNOT TECHNOLOGIES
             </span>
           </div>
             <p className="mt-4 text-neutral-300 text-sm">
-              Empowering innovations, crafting journeys, and building premium living spaces with a commitment to excellence and customer satisfaction.
+              Technology that drives business growth. Software, web, design, data &amp; AI, digital marketing, creative and IT support services, all under one roof for B2B and B2C businesses.
             </p>
             <div className="flex items-center mt-6 space-x-4">
               <a 
@@ -83,15 +83,15 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/portfolio" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/technologies" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Portfolio
+                  Technologies
                 </Link>
               </li>
               <li>
-                <Link to="/csr" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/portfolio" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  CSR
+                  Portfolio
                 </Link>
               </li>
               <li>
@@ -108,39 +108,39 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/technologies" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Technology Solutions
+                  Software Development
                 </Link>
               </li>
               <li>
-                <Link to="/technologies" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Custom Development
+                  Web Design &amp; Development
                 </Link>
               </li>
               <li>
-                <Link to="/homes" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Premium Homes
+                  UI/UX &amp; Graphic Design
                 </Link>
               </li>
               <li>
-                <Link to="/homes" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Property Management
+                  Data, Automation &amp; AI
                 </Link>
               </li>
               <li>
-                <Link to="/tours" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Adventure Tours
+                  Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/tours" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
+                <Link to="/services" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200 flex items-center">
                   <ArrowRight size={16} className="mr-2" />
-                  Custom Travel Packages
+                  IT Support Services
                 </Link>
               </li>
             </ul>
@@ -154,7 +154,7 @@ const Footer = () => {
                 <MapPin size={20} className="text-primary-400 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-300">
                   Shah Road, Chalakudy<br />
-                  Trissur, Kerala <br />
+                  Thrissur, Kerala <br />
                   India, 680308
                 </span>
               </li>
@@ -166,8 +166,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-primary-400 mr-3 flex-shrink-0" />
-                <a href="mailto:help@cynot.in" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200">
-                  help@cynot.in
+                <a href="mailto:tonychristopherofficial@gmail.com" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200">
+                  tonychristopherofficial@gmail.com
                 </a>
               </li>
             </ul>
@@ -176,7 +176,7 @@ const Footer = () => {
         
         {/* Bottom Bar */}
         <div className="pt-8 mt-8 border-t border-neutral-800 text-sm text-neutral-400 flex flex-col md:flex-row justify-between items-center">
-          <p>© {currentYear} Cynot. All rights reserved.</p>
+          <p>© {currentYear} Cynot Technologies Private Limited. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex flex-wrap gap-4">
             <Link to="/privacy" className="hover:text-primary-400 transition-colors duration-200">
               Privacy Policy

@@ -1,11 +1,11 @@
 import { useEffect, useState, FormEvent } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Send, Phone, Mail, MapPin, Monitor, Home, MapIcon, Check } from 'lucide-react';
+import { Send, Phone, Mail, MapPin, Code, TrendingUp, Headphones, Check } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 
-type ContactDivision = 'general' | 'technologies' | 'homes' | 'tours';
+type ContactTopic = 'general' | 'build' | 'grow' | 'support';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,14 +13,14 @@ const Contact = () => {
     email: '',
     phone: '',
     subject: '',
-    division: 'general' as ContactDivision,
+    topic: 'general' as ContactTopic,
     message: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   
   useEffect(() => {
-    document.title = "Contact Us | Cynot";
+    document.title = "Contact Us | Cynot Technologies";
   }, []);
 
   const { ref: contactRef, inView: contactInView } = useInView({
@@ -79,14 +79,14 @@ const Contact = () => {
         email: '',
         phone: '',
         subject: '',
-        division: 'general',
+        topic: 'general',
         message: '',
       });
     }
   };
 
-  const handleDivisionSelect = (division: ContactDivision) => {
-    setFormData((prev) => ({ ...prev, division }));
+  const handleTopicSelect = (topic: ContactTopic) => {
+    setFormData((prev) => ({ ...prev, topic }));
   };
 
   return (
@@ -103,10 +103,10 @@ const Contact = () => {
         ></div>
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <span className="text-primary-400 font-bold text-md uppercase tracking-wider">Contact Us</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-6">Get in Touch</h1>
+            <span className="text-primary-400 font-bold text-md uppercase tracking-wider">Let's Talk</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-6">Let's build something that works for you.</h1>
             <p className="text-xl text-neutral-300">
-              Have questions or need more information? Our team is here to help. Reach out to us through the contact form or using our direct contact information.
+              Tell us what you need — software, a website, design, marketing or IT support — and our team will get back to you with the right scope and pricing model.
             </p>
           </div>
         </div>
@@ -131,7 +131,7 @@ const Contact = () => {
                       <h3 className="font-semibold text-xl mb-2">Our Location</h3>
                       <p className="text-neutral-600">
                       Shah Road, Chalakudy<br />
-                      Trissur, Kerala <br />
+                      Thrissur, Kerala <br />
                       India, 680308
                       </p>
                     </div>
@@ -142,8 +142,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-xl mb-2">Email Us</h3>
                       <p className="text-neutral-600 mb-1">
-                        <span className="font-medium">General Inquiries:</span> <br />
-                        <a href="mailto:info@cynot.in" className="text-primary-600 hover:underline">info@cynot.in</a>
+                        <span className="font-medium">Founder &amp; Tech Lead:</span> <br />
+                        <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a>
                       </p>
                       <p className="text-neutral-600 mb-1">
                         <span className="font-medium">Support:</span> <br />
@@ -158,11 +158,11 @@ const Contact = () => {
                       <h3 className="font-semibold text-xl mb-2">Call Us</h3>
                       <p className="text-neutral-600 mb-1">
                         <span className="font-medium">Main Office:</span> <br />
-                        <a href="tel:+91 9020 555 800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
+                        <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
                       </p>
                       <p className="text-neutral-600">
                         <span className="font-medium">Technical Support:</span> <br />
-                        <a href="tel:+91 8589 010 166" className="text-primary-600 hover:underline">+91 8589 010 166</a>
+                        <a href="tel:+918589010166" className="text-primary-600 hover:underline">+91 8589 010 166</a>
                       </p>
                     </div>
                   </div>
@@ -172,6 +172,25 @@ const Contact = () => {
                   <h3 className="font-semibold text-xl mb-3">Business Hours</h3>
                   <p className="text-neutral-600 mb-2">Monday - Friday: 9:00 AM - 8:00 PM</p>
                   <p className="text-neutral-600">Saturday - Sunday: Partially Closed</p>
+                </div>
+
+                <div className="mt-8 p-4 bg-white rounded-lg border border-neutral-200">
+                  <h3 className="font-semibold text-xl mb-3">Let's Talk</h3>
+                  <p className="text-neutral-700 font-semibold">Tony Christopher</p>
+                  <p className="text-primary-600 text-sm mb-2">Founder &amp; Tech Lead</p>
+                  <a
+                    href="mailto:tonychristopherofficial@gmail.com"
+                    className="text-neutral-600 hover:text-primary-600 hover:underline text-sm"
+                  >
+                    tonychristopherofficial@gmail.com
+                  </a>
+                  <br />
+                  <a
+                    href="tel:+919020555800"
+                    className="text-neutral-600 hover:text-primary-600 hover:underline text-sm"
+                  >
+                    +91 9020 555 800
+                  </a>
                 </div>
                 
                 <div className="mt-8">
@@ -248,18 +267,18 @@ const Contact = () => {
                 <div className="bg-white p-6 rounded-lg border border-neutral-200">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
                   
-                  {/* Division Selection */}
+                  {/* Topic Selection */}
                   <div className="mb-6">
-                    <p className="text-neutral-700 mb-3 font-medium">Which division would you like to contact?</p>
+                    <p className="text-neutral-700 mb-3 font-medium">What would you like to talk about?</p>
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                       <button
                         type="button"
                         className={`p-4 border rounded-md text-center transition-colors ${
-                          formData.division === 'general'
+                          formData.topic === 'general'
                             ? 'border-primary-600 bg-primary-50 text-primary-700'
                             : 'border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
                         }`}
-                        onClick={() => handleDivisionSelect('general')}
+                        onClick={() => handleTopicSelect('general')}
                       >
                         <div className="flex flex-col items-center">
                           <div className="mb-2">
@@ -274,45 +293,45 @@ const Contact = () => {
                       <button
                         type="button"
                         className={`p-4 border rounded-md text-center transition-colors ${
-                          formData.division === 'technologies'
+                          formData.topic === 'build'
                             ? 'border-primary-600 bg-primary-50 text-primary-700'
                             : 'border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
                         }`}
-                        onClick={() => handleDivisionSelect('technologies')}
+                        onClick={() => handleTopicSelect('build')}
                       >
                         <div className="flex flex-col items-center">
-                          <Monitor size={24} className="mb-2" />
-                          <span className="font-medium">Technologies</span>
+                          <Code size={24} className="mb-2" />
+                          <span className="font-medium">Build &amp; Design</span>
                         </div>
                       </button>
                       
                       <button
                         type="button"
                         className={`p-4 border rounded-md text-center transition-colors ${
-                          formData.division === 'homes'
+                          formData.topic === 'grow'
                             ? 'border-primary-600 bg-primary-50 text-primary-700'
                             : 'border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
                         }`}
-                        onClick={() => handleDivisionSelect('homes')}
+                        onClick={() => handleTopicSelect('grow')}
                       >
                         <div className="flex flex-col items-center">
-                          <Home size={24} className="mb-2" />
-                          <span className="font-medium">Homes</span>
+                          <TrendingUp size={24} className="mb-2" />
+                          <span className="font-medium">Grow &amp; Support</span>
                         </div>
                       </button>
                       
                       <button
                         type="button"
                         className={`p-4 border rounded-md text-center transition-colors ${
-                          formData.division === 'tours'
+                          formData.topic === 'support'
                             ? 'border-primary-600 bg-primary-50 text-primary-700'
                             : 'border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
                         }`}
-                        onClick={() => handleDivisionSelect('tours')}
+                        onClick={() => handleTopicSelect('support')}
                       >
                         <div className="flex flex-col items-center">
-                          <MapIcon size={24} className="mb-2" />
-                          <span className="font-medium">Tours</span>
+                          <Headphones size={24} className="mb-2" />
+                          <span className="font-medium">IT Support</span>
                         </div>
                       </button>
                     </div>
@@ -467,29 +486,29 @@ const Contact = () => {
             center
           >
             <p className="text-center">
-              Find answers to common questions about our services and how we can help you.
+              Find answers to common questions about our services, pricing and how we can help you.
             </p>
           </SectionTitle>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
             <div className="bg-neutral-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">What types of technology solutions do you offer?</h3>
+              <h3 className="text-lg font-semibold mb-3">What services does Cynot Technologies offer?</h3>
               <p className="text-neutral-700">
-                We provide a wide range of technology solutions including custom software development, cloud services, mobile app development, data management, business intelligence, and cybersecurity solutions tailored to your specific needs.
+                Eight digital service areas under one roof: Software Development, Web Design &amp; Development, UI/UX &amp; Graphic Design, Data, Automation &amp; AI, Digital Marketing, Creative &amp; Media Production, IT Support Services and Digital Business Services.
               </p>
             </div>
             
             <div className="bg-neutral-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">Where are your residential properties located?</h3>
+              <h3 className="text-lg font-semibold mb-3">How do you price a project?</h3>
               <p className="text-neutral-700">
-                Our properties are currently located in major cities across the United States, including New York, Miami, Austin, Seattle, and Los Angeles. We're continuously expanding to new locations to meet market demand.
+                We offer flexible pricing based on scope and complexity, using three standard models: an hourly rate for short-term or support work, a project-based fee for larger initiatives, and a retainer for long-term partnerships.
               </p>
             </div>
             
             <div className="bg-neutral-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">How can I book a travel experience with Cynot Tours?</h3>
+              <h3 className="text-lg font-semibold mb-3">Do you work with B2B and B2C businesses?</h3>
               <p className="text-neutral-700">
-                You can book a travel experience by contacting our travel consultants through this contact form, by email, or by phone. We'll work with you to create a personalized itinerary based on your preferences and requirements.
+                Yes. Our team has 7+ years of combined experience across both B2B and B2C sectors, so we understand how each market buys, uses and expects to be supported.
               </p>
             </div>
             
@@ -501,16 +520,16 @@ const Contact = () => {
             </div>
             
             <div className="bg-neutral-50 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold mb-3">What makes your homes different from others on the market?</h3>
+              <h3 className="text-lg font-semibold mb-3">What happens after the project goes live?</h3>
               <p className="text-neutral-700">
-                Our homes stand out for their premium quality, smart technology integration, sustainable design features, and exceptional attention to detail. We focus on creating living spaces that enhance lifestyle and provide long-term value.
+                Our commitment extends beyond completion. We provide ongoing support — website maintenance, managed IT, campaign management and helpdesk assistance — through comprehensive support services.
               </p>
             </div>
             
             <div className="bg-neutral-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold mb-3">How quickly can you respond to my inquiry?</h3>
               <p className="text-neutral-700">
-                We strive to respond to all inquiries within 24 business hours. For urgent matters, please call our customer support line for immediate assistance during business hours.
+                We strive to respond to all inquiries within 24 business hours. For urgent matters, please call our office for immediate assistance during business hours.
               </p>
             </div>
           </div>
@@ -521,9 +540,9 @@ const Contact = () => {
       <section className="section bg-primary-600 text-white">
         <div className="container">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey With Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Software, web, design, marketing &amp; IT support</h2>
             <p className="text-primary-100 mb-8 text-lg">
-              Whether you need innovative technology solutions, are looking for your dream home, or planning your next adventure, we're here to help you every step of the way.
+              All under one roof, tailored for B2B and B2C businesses — from the first build to ongoing support.
             </p>
             <Button 
               to="/services" 

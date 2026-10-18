@@ -3,16 +3,17 @@ import { useInView } from 'react-intersection-observer';
 
 interface Stat {
   id: number;
-  value: number;
-  suffix: string;
+  value?: number;
+  suffix?: string;
   label: string;
+  display?: string;
 }
 
 const stats: Stat[] = [
-  { id: 1, value: 200, suffix: '+', label: 'Projects Delivered' },
-  { id: 2, value: 5, suffix: '+', label: 'Years of Experience' },
-  { id: 3, value: 10, suffix: '+', label: 'Team Members' },
-  { id: 4, value: 99, suffix: '%', label: 'Client Satisfaction' },
+  { id: 1, value: 7, suffix: '+', label: 'Years of Combined Experience' },
+  { id: 2, display: 'B2B + B2C', label: 'Markets Served' },
+  { id: 3, value: 8, suffix: '', label: 'Digital Service Areas' },
+  { id: 4, display: 'End-to-end', label: 'Build to Ongoing Support' },
 ];
 
 const StatsBanner = () => {
@@ -48,19 +49,20 @@ interface StatItemProps {
 
 const StatItem = ({ stat, inView }: StatItemProps) => {
   const [displayValue, setDisplayValue] = useState(0);
+  const target = stat.value ?? 0;
   
   useEffect(() => {
-    if (inView) {
+    if (inView && !stat.display) {
       // Start counter animation when in view
       const duration = 2000; // ms
       const interval = 20; // ms
-      const step = stat.value / (duration / interval);
+      const step = target / (duration / interval);
       
       let current = 0;
       const timer = setInterval(() => {
         current += step;
-        if (current > stat.value) {
-          current = stat.value;
+        if (current > target) {
+          current = target;
           clearInterval(timer);
         }
         setDisplayValue(Math.floor(current));
@@ -68,12 +70,14 @@ const StatItem = ({ stat, inView }: StatItemProps) => {
       
       return () => clearInterval(timer);
     }
-  }, [inView, stat.value]);
+  }, [inView, target, stat.display]);
   
   return (
     <div className="text-center">
-      <div className="text-white font-bold text-5xl">
-        {inView ? displayValue : 0}{stat.suffix}
+      <div className="text-white font-bold text-4xl md:text-5xl">
+        {stat.display
+          ? stat.display
+          : `${inView ? displayValue : 0}${stat.suffix ?? ''}`}
       </div>
       <div className="mt-2 text-primary-100 text-lg font-medium">
         {stat.label}

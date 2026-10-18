@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Monitor, Home, MapPin } from 'lucide-react';
+import { Code, TrendingUp } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 import Button from './Button';
 
 const ServicesSection = () => {
-  const [activeTab, setActiveTab] = useState('technologies');
+  const [activeTab, setActiveTab] = useState('build');
   
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -13,51 +13,35 @@ const ServicesSection = () => {
   });
   
   const tabInfo = {
-    technologies: {
-      icon: <Monitor size={32} />,
-      title: 'Cynot Technologies',
-      description: 'Innovative IT solutions and custom development services to help businesses transform and grow in the digital landscape.',
+    build: {
+      icon: <Code size={32} />,
+      title: 'Build & Design',
+      description: 'Products, websites, brands and intelligent systems, built around your business — from first wireframe to a platform your team can run on.',
       features: [
-        'Custom Software Development',
-        'Cloud Solutions & Migrations',
-        'Enterprise System Integration',
-        'Mobile App Development',
-        'Digital Transformation Consulting',
+        'Software Development',
+        'Web Design & Development',
+        'UI/UX & Graphic Design',
+        'Data, Automation & AI',
+      ],
+      image: 'https://images.pexels.com/photos/3861950/pexels-photo-3861950.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      link: '/services',
+    },
+    grow: {
+      icon: <TrendingUp size={32} />,
+      title: 'Grow & Support',
+      description: 'Marketing, media, IT support and everyday digital operations, handled for you so your business keeps running and keeps reaching people.',
+      features: [
+        'Digital Marketing',
+        'Creative & Media Production',
+        'IT Support Services',
+        'Digital Business Services',
       ],
       image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      link: '/technologies',
-    },
-    homes: {
-      icon: <Home size={32} />,
-      title: 'Cynot Homes',
-      description: 'Premium living spaces designed with elegance, comfort, and sustainability at the forefront of every project.',
-      features: [
-        'Luxury Residential Properties',
-        'Smart Home Integration',
-        'Sustainable Building Practices',
-        'Interior Design Services',
-        'Property Management',
-      ],
-      image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      link: '/homes',
-    },
-    tours: {
-      icon: <MapPin size={32} />,
-      title: 'Cynot Tours',
-      description: 'Curated travel experiences that combine adventure, culture, and relaxation for unforgettable journeys around the world.',
-      features: [
-        'Customized Travel Packages',
-        'Adventure Expeditions',
-        'Cultural Immersion Trips',
-        'Luxury Retreats',
-        'Corporate Travel Management',
-      ],
-      image: 'https://images.pexels.com/photos/1271619/pexels-photo-1271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      link: '/tours',
+      link: '/services',
     },
   };
   
-  const handleTabChange = (tab: 'technologies' | 'homes' | 'tours') => {
+  const handleTabChange = (tab: 'build' | 'grow') => {
     setActiveTab(tab);
   };
   
@@ -67,12 +51,12 @@ const ServicesSection = () => {
     <section className="section bg-neutral-50" ref={ref}>
       <div className="container">
         <SectionTitle
-          title="Our Specialized Divisions"
+          title="Service Offerings"
           subtitle="What We Do"
           center
         >
           <p className="text-neutral-600 text-center">
-            Explore our three distinct business divisions, each delivering excellence in their respective domains while upholding our shared values of innovation, quality, and customer satisfaction.
+            Eight digital service areas under one roof, grouped the way businesses actually buy them: everything you build and design, and everything you need to grow and support it.
           </p>
         </SectionTitle>
         
@@ -80,33 +64,23 @@ const ServicesSection = () => {
         <div className="flex flex-wrap justify-center mb-12 border-b border-neutral-200">
           <button
             className={`px-6 py-3 font-medium text-sm transition-colors duration-200 border-b-2 -mb-px ${
-              activeTab === 'technologies' 
+              activeTab === 'build' 
                 ? 'border-primary-600 text-primary-600' 
                 : 'border-transparent text-neutral-600 hover:text-primary-600'
             }`}
-            onClick={() => handleTabChange('technologies')}
+            onClick={() => handleTabChange('build')}
           >
-            Technologies
+            Build &amp; Design
           </button>
           <button
             className={`px-6 py-3 font-medium text-sm transition-colors duration-200 border-b-2 -mb-px ${
-              activeTab === 'homes' 
+              activeTab === 'grow' 
                 ? 'border-primary-600 text-primary-600' 
                 : 'border-transparent text-neutral-600 hover:text-primary-600'
             }`}
-            onClick={() => handleTabChange('homes')}
+            onClick={() => handleTabChange('grow')}
           >
-            Homes
-          </button>
-          <button
-            className={`px-6 py-3 font-medium text-sm transition-colors duration-200 border-b-2 -mb-px ${
-              activeTab === 'tours' 
-                ? 'border-primary-600 text-primary-600' 
-                : 'border-transparent text-neutral-600 hover:text-primary-600'
-            }`}
-            onClick={() => handleTabChange('tours')}
-          >
-            Tours
+            Grow &amp; Support
           </button>
         </div>
         
@@ -139,7 +113,7 @@ const ServicesSection = () => {
               to={activeInfo.link} 
               variant="primary"
             >
-              Learn More
+              View All Services
             </Button>
           </div>
           

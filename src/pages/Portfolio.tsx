@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Monitor, Home, MapPin } from 'lucide-react';
+import { Code, TrendingUp } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
 import Card from '../components/Card';
 
-type ProjectCategory = 'all' | 'technologies' | 'homes' | 'tours';
+type ProjectCategory = 'all' | 'build' | 'grow';
 
 interface Project {
   id: number;
   title: string;
-  category: 'technologies' | 'homes' | 'tours';
+  category: 'build' | 'grow';
   image: string;
   description: string;
   tags: string[];
@@ -21,84 +21,57 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Enterprise Dashboard System',
-    category: 'technologies',
+    title: 'Admin Portal & Reporting Dashboards',
+    category: 'build',
     image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Custom analytics platform for a Fortune 500 company that increased operational efficiency by 30% through real-time data visualization and automated reporting.',
-    tags: ['Web Application', 'Analytics', 'Enterprise'],
-    link: '/portfolio/dashboard-system',
+    description: 'Custom web application with role-based access, real-time data visualisation and automated reporting for a growing operations team.',
+    tags: ['Web Application', 'Analytics', 'API Integration'],
+    link: '/portfolio/admin-portal',
   },
   {
     id: 2,
-    title: 'Healthcare Mobile App',
-    category: 'technologies',
-    image: 'https://images.pexels.com/photos/7828328/pexels-photo-7828328.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Patient engagement app for a leading healthcare provider, improving patient satisfaction scores by 25% while streamlining appointment management and care communications.',
-    tags: ['Mobile App', 'Healthcare', 'UX Design'],
-    link: '/portfolio/healthcare-app',
+    title: 'E-commerce Storefront & CMS',
+    category: 'build',
+    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    description: 'Responsive online store with a content management system, product catalogue and marketplace listings tuned for search and speed.',
+    tags: ['E-commerce', 'CMS', 'SEO'],
+    link: '/portfolio/ecommerce-storefront',
   },
   {
     id: 3,
-    title: 'Cloud Migration Project',
-    category: 'technologies',
-    image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Successful migration of legacy systems to the cloud for a financial services firm, reducing infrastructure costs by 40% while improving system reliability and scalability.',
-    tags: ['Cloud Computing', 'Migration', 'Financial Services'],
-    link: '/portfolio/cloud-migration',
+    title: 'Mobile App for iOS & Android',
+    category: 'build',
+    image: 'https://images.pexels.com/photos/6473730/pexels-photo-6473730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    description: 'Cross-platform mobile app with a prototype-led UX process, launched alongside a design system the client team can extend.',
+    tags: ['Mobile App', 'UI/UX', 'Design System'],
+    link: '/portfolio/mobile-app',
   },
   {
     id: 4,
-    title: 'Oceanview Residences',
-    category: 'homes',
-    image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Luxury waterfront apartments featuring smart home technology, sustainable design, and premium amenities, selling out within six months of launch.',
-    tags: ['Luxury Living', 'Smart Homes', 'Waterfront'],
-    link: '/portfolio/oceanview-residences',
+    title: 'Brand Identity & Design System',
+    category: 'build',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    description: 'Logo, brand identity, style guide and a reusable component library covering social creatives, ad banners and print-ready artwork.',
+    tags: ['Branding', 'UI/UX', 'Creative'],
+    link: '/portfolio/brand-identity',
   },
   {
     id: 5,
-    title: 'Parkside Villas',
-    category: 'homes',
-    image: 'https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Elegant family homes adjacent to a beautiful park, combining modern design with eco-friendly features and exceptional community amenities.',
-    tags: ['Family Homes', 'Eco-Friendly', 'Community'],
-    link: '/portfolio/parkside-villas',
+    title: 'SEO & Paid Advertising Program',
+    category: 'grow',
+    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    description: 'Local SEO, Google and Meta campaigns with conversion tracking and monthly reporting across search, social and email.',
+    tags: ['SEO', 'Google Ads', 'Analytics'],
+    link: '/portfolio/search-advertising',
   },
   {
     id: 6,
-    title: 'Urban Heights',
-    category: 'homes',
-    image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Modern downtown condos with stunning city views, designed for contemporary urban living with premium finishes and innovative space utilization.',
-    tags: ['Urban Living', 'Modern Design', 'City Views'],
-    link: '/portfolio/urban-heights',
-  },
-  {
-    id: 7,
-    title: 'Japan Cultural Odyssey',
-    category: 'tours',
-    image: 'https://images.pexels.com/photos/1829980/pexels-photo-1829980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Immersive 10-day journey through Japan\'s rich culture and traditions, featuring exclusive experiences from tea ceremonies to artisan workshops.',
-    tags: ['Cultural', 'Asia', 'Immersive'],
-    link: '/portfolio/japan-odyssey',
-  },
-  {
-    id: 8,
-    title: 'Costa Rica Adventure',
-    category: 'tours',
-    image: 'https://images.pexels.com/photos/2024510/pexels-photo-2024510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Thrilling 8-day adventure combining rainforest exploration, wildlife encounters, and coastal relaxation in Costa Rica\'s diverse ecosystems.',
-    tags: ['Adventure', 'Nature', 'Eco-Tourism'],
-    link: '/portfolio/costa-rica-adventure',
-  },
-  {
-    id: 9,
-    title: 'Italian Splendor',
-    category: 'tours',
-    image: 'https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-    description: 'Luxury 12-day tour through Italy\'s most iconic destinations, featuring exclusive access to historical sites, culinary experiences, and luxury accommodations.',
-    tags: ['Luxury', 'Europe', 'Cultural'],
-    link: '/portfolio/italian-splendor',
+    title: 'Managed IT & Cloud Support',
+    category: 'grow',
+    image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    description: 'Network setup, cloud hosting on AWS and Azure, backup and disaster recovery, plus helpdesk support for an internal team.',
+    tags: ['Cloud Computing', 'Cybersecurity', 'IT Support'],
+    link: '/portfolio/managed-it-support',
   },
 ];
 
@@ -107,7 +80,7 @@ const Portfolio = () => {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   
   useEffect(() => {
-    document.title = "Portfolio | Cynot";
+    document.title = "Portfolio | Cynot Technologies";
     
     if (activeCategory === 'all') {
       setFilteredProjects(projects);
@@ -136,9 +109,9 @@ const Portfolio = () => {
         <div className="container relative z-10">
           <div className="max-w-3xl">
             <span className="text-primary-400 font-bold text-md uppercase tracking-wider">Our Portfolio</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-6">Our Work Across Divisions</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mt-2 mb-6">Work built to keep working</h1>
             <p className="text-xl text-neutral-300">
-              Explore our diverse portfolio of projects across technology, real estate, and travel, showcasing our commitment to excellence and innovation.
+              Selected projects from across our eight digital service areas — everything we design and build, and everything we help you grow and support.
             </p>
           </div>
         </div>
@@ -156,7 +129,7 @@ const Portfolio = () => {
             center
           >
             <p className="text-center">
-              Browse through our collection of successful projects across our three specialized divisions.
+              Browse our work across Build &amp; Design and Grow &amp; Support.
             </p>
           </SectionTitle>
 
@@ -174,41 +147,28 @@ const Portfolio = () => {
             </button>
             <button
               className={`px-6 py-3 font-medium text-sm transition-colors duration-200 ${
-                activeCategory === 'technologies' 
+                activeCategory === 'build' 
                   ? 'text-primary-600 border-b-2 border-primary-600' 
                   : 'text-neutral-600 hover:text-primary-600'
               }`}
-              onClick={() => setActiveCategory('technologies')}
+              onClick={() => setActiveCategory('build')}
             >
               <div className="flex items-center">
-                <Monitor size={16} className="mr-2" />
-                Technologies
+                <Code size={16} className="mr-2" />
+                Build &amp; Design
               </div>
             </button>
             <button
               className={`px-6 py-3 font-medium text-sm transition-colors duration-200 ${
-                activeCategory === 'homes' 
+                activeCategory === 'grow' 
                   ? 'text-primary-600 border-b-2 border-primary-600' 
                   : 'text-neutral-600 hover:text-primary-600'
               }`}
-              onClick={() => setActiveCategory('homes')}
+              onClick={() => setActiveCategory('grow')}
             >
               <div className="flex items-center">
-                <Home size={16} className="mr-2" />
-                Homes
-              </div>
-            </button>
-            <button
-              className={`px-6 py-3 font-medium text-sm transition-colors duration-200 ${
-                activeCategory === 'tours' 
-                  ? 'text-primary-600 border-b-2 border-primary-600' 
-                  : 'text-neutral-600 hover:text-primary-600'
-              }`}
-              onClick={() => setActiveCategory('tours')}
-            >
-              <div className="flex items-center">
-                <MapPin size={16} className="mr-2" />
-                Tours
+                <TrendingUp size={16} className="mr-2" />
+                Grow &amp; Support
               </div>
             </button>
           </div>
@@ -249,9 +209,9 @@ const Portfolio = () => {
       <section className="section bg-primary-600 text-white">
         <div className="container">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start your project?</h2>
             <p className="text-primary-100 mb-8 text-lg">
-              Contact us today to discuss how we can help you achieve your goals, whether in technology, real estate, or travel.
+              Tell us what you want to build, launch or support — we'll recommend the right scope and pricing model.
             </p>
             <Button 
               to="/contact" 
