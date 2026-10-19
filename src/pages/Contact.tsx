@@ -1,12 +1,26 @@
 import { useState, FormEvent } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Send, Phone, Mail, MapPin, Code, TrendingUp, Headphones, Check } from 'lucide-react';
+import { Send, Phone, Mail, MapPin, Code, TrendingUp, Headphones, Check, Loader2, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 import SectionTitle from '../components/SectionTitle';
 import SEO from '../components/SEO';
 import Button from '../components/Button';
 
 type ContactTopic = 'general' | 'build' | 'grow' | 'support';
+
+// EmailJS configuration — only the Public Key is ever used in the browser.
+const EMAILJS_SERVICE_ID = 'service_7c72u7o';
+const EMAILJS_TEMPLATE_ID = 'template_jakaysg';
+const EMAILJS_PUBLIC_KEY = '2xQZSirigLHcmyc-A';
+
+const TOPIC_LABELS: Record<ContactTopic, string> = {
+  general: 'General',
+  build: 'Build & Design',
+  grow: 'Grow & Support',
+  support: 'IT Support',
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,6 +33,7 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle');
 
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.2,
@@ -64,13 +79,37 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
-    if (validate()) {
-      // In a real application, you would submit the form data to a server here
-      console.log('Form submitted:', formData);
+
+    if (!validate() || status === 'sending') {
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const now = new Date();
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          subject: formData.subject,
+          topic: TOPIC_LABELS[formData.topic],
+          message: formData.message,
+          reply_to: formData.email,
+          date: now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' }),
+          time: now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }),
+          page: window.location.href,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
       setSubmitted(true);
+      setStatus('idle');
+      setErrors({});
       setFormData({
         name: '',
         email: '',
@@ -79,6 +118,8 @@ const Contact = () => {
         topic: 'general',
         message: '',
       });
+    } catch {
+      setStatus('error');
     }
   };
 
@@ -259,13 +300,22 @@ const Contact = () => {
             {/* Right Section - Contact Form */}
             <div className="lg:col-span-2">
               {submitted ? (
-                <div className="bg-green-50 p-8 rounded-lg border border-green-200 text-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35, ease: 'easeOut' }}
+                  className="bg-green-50 p-8 rounded-lg border border-green-200 text-center"
+                >
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
                     <Check size={32} />
                   </div>
                   <h2 className="text-2xl font-bold text-green-800 mb-2">Thank You!</h2>
-                  <p className="text-green-600 mb-6">
+                  <p className="text-green-600 mb-2">
                     Your message has been received. We appreciate your interest and will get back to you shortly.
+                  </p>
+                  <p className="text-sm text-green-700 mb-6">
+                    We usually reply within <strong>24 business hours</strong> — for anything urgent, call us at{' '}
+                    <a href="tel:+919020555800" className="font-semibold underline">+91 9020 555 800</a>.
                   </p>
                   <Button
                     variant="outline"
@@ -273,10 +323,23 @@ const Contact = () => {
                   >
                     Send Another Message
                   </Button>
-                </div>
+                </motion.div>
               ) : (
                 <div className="bg-white p-6 rounded-lg border border-neutral-200">
                   <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+
+                  {status === 'error' && (
+                    <div className="mb-5 flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-lg" role="alert">
+                      <AlertCircle size={20} className="text-red-500 shrink-0 mt-0.5" />
+                      <div className="text-sm text-red-700">
+                        <p className="font-semibold">Your message couldn't be sent</p>
+                        <p className="mt-1">
+                          Something went wrong on our side — please try again, or email us directly at{' '}
+                          <a href="mailto:contact@cynot.in" className="font-medium underline">contact@cynot.in</a>.
+                        </p>
+                      </div>
+                    </div>
+                  )}
                   
                   {/* Topic Selection */}
                   <div className="mb-6">
@@ -453,10 +516,11 @@ const Contact = () => {
                       <Button
                         type="submit"
                         variant="primary"
-                        icon={<Send size={16} />}
+                        icon={status === 'sending' ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
                         size="lg"
+                        disabled={status === 'sending'}
                       >
-                        Send Message
+                        {status === 'sending' ? 'Sending…' : 'Send Message'}
                       </Button>
                     </div>
                   </form>
