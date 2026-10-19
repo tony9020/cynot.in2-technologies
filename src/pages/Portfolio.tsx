@@ -15,7 +15,6 @@ interface Project {
   image: string;
   description: string;
   tags: string[];
-  link: string;
 }
 
 const projects: Project[] = [
@@ -26,7 +25,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Custom web application with role-based access, real-time data visualisation and automated reporting for a growing operations team.',
     tags: ['Web Application', 'Analytics', 'API Integration'],
-    link: '/portfolio/admin-portal',
   },
   {
     id: 2,
@@ -35,7 +33,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Responsive online store with a content management system, product catalogue and marketplace listings tuned for search and speed.',
     tags: ['E-commerce', 'CMS', 'SEO'],
-    link: '/portfolio/ecommerce-storefront',
   },
   {
     id: 3,
@@ -44,7 +41,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/6473730/pexels-photo-6473730.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Cross-platform mobile app with a prototype-led UX process, launched alongside a design system the client team can extend.',
     tags: ['Mobile App', 'UI/UX', 'Design System'],
-    link: '/portfolio/mobile-app',
   },
   {
     id: 4,
@@ -53,7 +49,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Logo, brand identity, style guide and a reusable component library covering social creatives, ad banners and print-ready artwork.',
     tags: ['Branding', 'UI/UX', 'Creative'],
-    link: '/portfolio/brand-identity',
   },
   {
     id: 5,
@@ -62,7 +57,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Local SEO, Google and Meta campaigns with conversion tracking and monthly reporting across search, social and email.',
     tags: ['SEO', 'Google Ads', 'Analytics'],
-    link: '/portfolio/search-advertising',
   },
   {
     id: 6,
@@ -71,7 +65,6 @@ const projects: Project[] = [
     image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     description: 'Network setup, cloud hosting on AWS and Azure, backup and disaster recovery, plus helpdesk support for an internal team.',
     tags: ['Cloud Computing', 'Cybersecurity', 'IT Support'],
-    link: '/portfolio/managed-it-support',
   },
 ];
 
@@ -181,7 +174,6 @@ const Portfolio = () => {
                 image={project.image}
                 title={project.title}
                 content={project.description}
-                to={project.link}
                 className="group h-full flex flex-col"
                 hoverEffect={true}
               >

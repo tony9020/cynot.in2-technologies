@@ -122,17 +122,26 @@ const Contact = () => {
             {/* Left Sidebar - Contact Information */}
             <div className="lg:col-span-1">
               <div className="bg-neutral-50 p-6 rounded-lg">
-                <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+                <h2 className="text-2xl font-bold mb-1">Contact Information</h2>
+                <p className="text-neutral-600 mb-6 text-sm">
+                  CYNOT TECHNOLOGIES PRIVATE LIMITED · CIN U62099KL2024PTC087538
+                </p>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
                     <MapPin className="text-primary-600 mr-4 mt-1" size={24} />
                     <div>
-                      <h3 className="font-semibold text-xl mb-2">Our Location</h3>
+                      <h3 className="font-semibold text-xl mb-2">Our Addresses</h3>
+                      <p className="text-neutral-600 mb-3">
+                        <span className="font-medium">Registered Office:</span><br />
+                        Chaliechen House, Mangalassery,<br />
+                        Koratti South, Mukundapuram,<br />
+                        Thrissur 680308, Kerala, India
+                      </p>
                       <p className="text-neutral-600">
-                      Shah Road, Chalakudy<br />
-                      Thrissur, Kerala <br />
-                      India, 680308
+                        <span className="font-medium">Operating Office:</span><br />
+                        Shah Road, Chalakudy,<br />
+                        Thrissur 680308, Kerala, India
                       </p>
                     </div>
                   </div>

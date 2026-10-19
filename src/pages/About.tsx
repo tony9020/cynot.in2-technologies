@@ -140,6 +140,43 @@ const About = () => {
         </div>
       </section>
 
+      {/* Registered Company Details */}
+      <section className="section bg-neutral-50 pt-0 pb-0">
+        <div className="container py-12">
+          <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+            <h2 className="text-2xl font-bold mb-6">Registered Company Details</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Registered Name</p>
+                <p className="text-neutral-700">CYNOT TECHNOLOGIES PRIVATE LIMITED (brand: Cynot Technologies)</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Corporate Identity Number (CIN)</p>
+                <p className="text-neutral-700">U62099KL2024PTC087538</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Incorporation</p>
+                <p className="text-neutral-700">6 May 2024 under the Companies Act, 2013 — company limited by shares</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Nature of Business</p>
+                <p className="text-neutral-700">IT solutions provider: software, web, UI/UX &amp; graphics, data &amp; AI, digital marketing, creative &amp; media, IT support and digital business services for B2B and B2C clients</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Registered Office</p>
+                <p className="text-neutral-700">Chaliechen House, Mangalassery, Koratti South, Mukundapuram, Thrissur 680308, Kerala, India</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Contact</p>
+                <p className="text-neutral-700">
+                  <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section 
         ref={benefitsRef}

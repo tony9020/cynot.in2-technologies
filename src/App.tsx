@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 // Components
@@ -13,6 +13,9 @@ import Services from './pages/Services';
 import Technologies from './pages/Technologies';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+import RefundPolicy from './pages/RefundPolicy';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -45,6 +48,13 @@ function App() {
             <Route path="/technologies" element={<Technologies />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            {/* Legacy paths */}
+            <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+            <Route path="/terms" element={<Navigate to="/terms-and-conditions" replace />} />
+            <Route path="/cookies" element={<Navigate to="/privacy-policy" replace />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

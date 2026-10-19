@@ -18,7 +18,7 @@ const Footer = () => {
             </span>
           </div>
             <p className="mt-4 text-neutral-300 text-sm">
-              Technology that drives business growth. Software, web, design, data &amp; AI, digital marketing, creative and IT support services, all under one roof for B2B and B2C businesses.
+              Cynot Technologies Private Limited (CIN U62099KL2024PTC087538) — technology that drives business growth. Software, web, design, data &amp; AI, digital marketing, creative and IT support services for B2B and B2C businesses.
             </p>
             <div className="flex items-center mt-6 space-x-4">
               <a 
@@ -153,9 +153,9 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={20} className="text-primary-400 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-300">
-                  Shah Road, Chalakudy<br />
-                  Thrissur, Kerala <br />
-                  India, 680308
+                  Chaliechen House, Mangalassery<br />
+                  Koratti South, Mukundapuram<br />
+                  Thrissur 680308, Kerala, India
                 </span>
               </li>
               <li className="flex items-center">
@@ -178,14 +178,14 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-neutral-800 text-sm text-neutral-400 flex flex-col md:flex-row justify-between items-center">
           <p>© {currentYear} Cynot Technologies Private Limited. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex flex-wrap gap-4">
-            <Link to="/privacy" className="hover:text-primary-400 transition-colors duration-200">
+            <Link to="/privacy-policy" className="hover:text-primary-400 transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-primary-400 transition-colors duration-200">
-              Terms of Service
+            <Link to="/terms-and-conditions" className="hover:text-primary-400 transition-colors duration-200">
+              Terms &amp; Conditions
             </Link>
-            <Link to="/cookies" className="hover:text-primary-400 transition-colors duration-200">
-              Cookie Policy
+            <Link to="/refund-policy" className="hover:text-primary-400 transition-colors duration-200">
+              Refund, Cancellation &amp; Fulfilment Policy
             </Link>
           </div>
         </div>
