@@ -31,7 +31,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://linkedin.com/company/cynot.in" 
+                href="https://www.linkedin.com/company/cynot" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
