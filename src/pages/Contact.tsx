@@ -12,7 +12,7 @@ type ContactTopic = 'general' | 'build' | 'grow' | 'support';
 
 // EmailJS configuration — only the Public Key is ever used in the browser.
 const EMAILJS_SERVICE_ID = 'service_7c72u7o';
-const EMAILJS_TEMPLATE_ID = 'template_jakaysg';
+const EMAILJS_TEMPLATE_ID = 'template_b464v5t';
 const EMAILJS_PUBLIC_KEY = '2xQZSirigLHcmyc-A';
 
 const TOPIC_LABELS: Record<ContactTopic, string> = {
