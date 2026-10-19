@@ -18,7 +18,8 @@ const PrivacyPolicy = () => (
     eyebrow="Legal"
     title="Privacy Policy"
     updated="Last updated: 19 October 2026"
-    documentTitle="Privacy Policy | Cynot Technologies"
+    description="How Cynot Technologies Private Limited collects, uses, stores and protects personal data — cookies, analytics, retention periods and your rights under India's DPDP Act, 2023."
+    path="/privacy-policy"
     intro="This Privacy Policy explains how CYNOT TECHNOLOGIES PRIVATE LIMITED ('Cynot Technologies', 'we', 'us') collects, uses, stores and shares personal information when you visit cynot.in, contact us, or use our services. It applies to business (B2B) and consumer (B2C) clients and website visitors in India and internationally."
   >
     <H2>1. Who we are</H2>

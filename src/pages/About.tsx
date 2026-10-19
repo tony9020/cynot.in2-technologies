@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Award, Layers, DollarSign, Clock, Headphones, Users, Code, ShieldCheck } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 import Button from '../components/Button';
 
 const benefits = [
@@ -55,10 +55,6 @@ const expertise = [
 ];
 
 const About = () => {
-  useEffect(() => {
-    document.title = "About Us | Cynot Technologies";
-  }, []);
-
   const { ref: benefitsRef, inView: benefitsInView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -76,6 +72,11 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Incorporated in 2024 (CIN U62099KL2024PTC087538), Cynot Technologies is a Thrissur-based IT solutions company with 7+ years of combined team experience across software, web, design, marketing and IT support."
+        path="/about"
+      />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-32 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>

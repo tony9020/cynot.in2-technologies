@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Clock, Calendar, Repeat } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 import Button from '../components/Button';
 
 interface ServiceOffering {
@@ -154,10 +154,6 @@ const ServiceCard = ({ service, inView }: { service: ServiceOffering; inView: bo
 );
 
 const Services = () => {
-  useEffect(() => {
-    document.title = "Services | Cynot Technologies";
-  }, []);
-
   const { ref: buildRef, inView: buildInView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -175,6 +171,11 @@ const Services = () => {
 
   return (
     <>
+      <SEO
+        title="Services"
+        description="Explore Cynot Technologies' eight service areas: software development, web design, UI/UX and graphics, data & AI, digital marketing, creative production, IT support and digital business services."
+        path="/services"
+      />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-32 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>

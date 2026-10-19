@@ -1,21 +1,22 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
+import SEO from './SEO';
 
 interface LegalPageProps {
   eyebrow: string;
   title: string;
+  /** SEO meta description for the page. */
+  description: string;
+  /** Route path, e.g. '/privacy-policy'. */
+  path: string;
   updated?: string;
   intro?: string;
-  documentTitle: string;
   children: ReactNode;
 }
 
-const LegalPage = ({ eyebrow, title, updated, intro, documentTitle, children }: LegalPageProps) => {
-  useEffect(() => {
-    document.title = documentTitle;
-  }, [documentTitle]);
-
+const LegalPage = ({ eyebrow, title, description, path, updated, intro, children }: LegalPageProps) => {
   return (
     <>
+      <SEO title={title} description={description} path={path} />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-28 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>

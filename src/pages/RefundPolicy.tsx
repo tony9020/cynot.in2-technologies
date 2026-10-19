@@ -22,7 +22,8 @@ const RefundPolicy = () => (
     eyebrow="Legal"
     title="Refund, Cancellation & Fulfilment Policy"
     updated="Last updated: 19 October 2026"
-    documentTitle="Refund, Cancellation & Fulfilment Policy | Cynot Technologies"
+    description="Delivery timelines, cancellation terms and explicit refund windows for domestic and international clients — including 10–21 business day international refunds."
+    path="/refund-policy"
     intro="This policy sets out how CYNOT TECHNOLOGIES PRIVATE LIMITED delivers services (fulfilment), how and when you can cancel, and the explicit timelines and conditions for refunds — including international engagements. It applies to all clients unless a signed statement of work states otherwise; where terms differ, the signed statement of work prevails."
   >
     <H2>1. Fulfilment: how and when we deliver</H2>

@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Monitor, Cloud, Database, Code, Server, ShieldCheck, Smartphone, LineChart } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 import Button from '../components/Button';
 import Card from '../components/Card';
 
@@ -46,10 +46,6 @@ const capabilities = [
 ];
 
 const Technologies = () => {
-  useEffect(() => {
-    document.title = "Technologies | Cynot Technologies";
-  }, []);
-
   const { ref: overviewRef, inView: overviewInView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -67,6 +63,11 @@ const Technologies = () => {
 
   return (
     <>
+      <SEO
+        title="Technologies"
+        description="The tools and platforms behind our work — modern web frameworks, cloud, databases, automation and AI — chosen to keep your software scalable, secure and easy to maintain."
+        path="/technologies"
+      />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-32 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>

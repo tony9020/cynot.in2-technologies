@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 
 import  { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import SEO from '../components/SEO';
 import ServicesSection from '../components/ServicesSection';
 import StatsBanner from '../components/StatsBanner';
 import SectionTitle from '../components/SectionTitle';
@@ -34,10 +34,6 @@ const benefits = [
 ];
 
 const Home = () => {
-  useEffect(() => {
-    document.title = "Cynot Technologies | Technology that drives business growth";
-  }, []);
-
   const { ref: aboutRef, inView: aboutInView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -60,6 +56,11 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="Cynot Technologies | IT Solutions Company in Thrissur, Kerala"
+        description="Technology that drives business growth. Cynot Technologies delivers software development, web design, UI/UX, data & AI, digital marketing and IT support for B2B and B2C businesses."
+        path="/"
+      />
       <Hero
         title="Technology that drives business growth."
         subtitle="IT Solutions Provider"

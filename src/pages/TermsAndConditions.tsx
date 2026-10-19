@@ -18,7 +18,8 @@ const TermsAndConditions = () => (
     eyebrow="Legal"
     title="Terms & Conditions"
     updated="Last updated: 19 October 2026"
-    documentTitle="Terms & Conditions | Cynot Technologies"
+    description="Terms governing the use of cynot.in and engagements with Cynot Technologies Private Limited for software, web, design, digital marketing and IT support services."
+    path="/terms-and-conditions"
     intro="These Terms & Conditions govern the use of this website and the engagement of CYNOT TECHNOLOGIES PRIVATE LIMITED ('Cynot Technologies', 'we', 'us') for software, web, design, data & AI, digital marketing, creative, IT support and digital business services. By using this website, requesting a quotation, or confirming an order, you agree to these Terms."
   >
     <H2>1. About us</H2>

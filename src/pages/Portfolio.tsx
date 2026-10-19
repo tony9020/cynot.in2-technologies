@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import SEO from '../components/SEO';
 import { Code, TrendingUp } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
@@ -73,8 +74,6 @@ const Portfolio = () => {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
   
   useEffect(() => {
-    document.title = "Portfolio | Cynot Technologies";
-    
     if (activeCategory === 'all') {
       setFilteredProjects(projects);
     } else {
@@ -89,6 +88,11 @@ const Portfolio = () => {
 
   return (
     <>
+      <SEO
+        title="Portfolio"
+        description="Selected work by Cynot Technologies — admin portals, e-commerce storefronts, mobile apps, brand identities, search campaigns and managed IT support for growing businesses."
+        path="/portfolio"
+      />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-32 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>

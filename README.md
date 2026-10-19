@@ -40,3 +40,21 @@ npm run lint     # eslint
 ```
 
 Stack: React 18 + TypeScript, Vite, Tailwind CSS, React Router, Framer Motion, Lucide icons.
+
+## SEO
+
+The site is fully SEO-optimised for the **cynot.in** domain:
+
+- Per-page `<title>`, meta description, canonical URL and Open Graph/Twitter tags, managed by `src/components/SEO.tsx` (one unique title/description per route; 404 page is `noindex`).
+- Structured data (JSON-LD) in `index.html`: `ProfessionalService` organization (name, CIN, address, geo, hours, sameAs, offer catalog) + `WebSite`; `FAQPage` schema on `/contact` matching the visible FAQs.
+- `public/robots.txt` and `public/sitemap.xml` (all public routes with `lastmod`).
+- Google Analytics 4 (`G-GVC2RHEDV9`) is configured in `index.html`.
+
+After the domain goes live:
+
+1. Add `cynot.in` in the Vercel project settings → Domains, and point DNS:
+   - Apex `A` record → `76.76.21.21`
+   - `www` `CNAME` → `cname.vercel-dns.com`
+2. Verify the site in [Google Search Console](https://search.google.com/search-console) (HTML tag method: add the `<meta name="google-site-verification">` tag to `index.html`), then submit `https://cynot.in/sitemap.xml`.
+3. Update GA4 property settings to the `cynot.in` domain and link Search Console.
+4. Create a 1200×630 social share image and replace `og:image`/`twitter:image` (`/ss.png`) in `index.html` and `DEFAULT_IMAGE` in `src/components/SEO.tsx` if desired.

@@ -1,8 +1,9 @@
-import { useEffect, useState, FormEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Send, Phone, Mail, MapPin, Code, TrendingUp, Headphones, Check } from 'lucide-react';
 
 import SectionTitle from '../components/SectionTitle';
+import SEO from '../components/SEO';
 import Button from '../components/Button';
 
 type ContactTopic = 'general' | 'build' | 'grow' | 'support';
@@ -18,10 +19,6 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
-  
-  useEffect(() => {
-    document.title = "Contact Us | Cynot Technologies";
-  }, []);
 
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.2,
@@ -91,6 +88,11 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Cynot Technologies in Thrissur, Kerala — email tonychristopherofficial@gmail.com or call +91 9020 555 800 to discuss your software, web, design or IT project."
+        path="/contact"
+      />
       {/* Hero Banner */}
       <div className="bg-neutral-900 text-white py-32 relative">
         <div className="absolute inset-0 z-0 bg-black opacity-70"></div>
@@ -487,6 +489,65 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What services does Cynot Technologies offer?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Eight digital service areas under one roof: Software Development, Web Design & Development, UI/UX & Graphic Design, Data, Automation & AI, Digital Marketing, Creative & Media Production, IT Support Services and Digital Business Services.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How do you price a project?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'We offer flexible pricing based on scope and complexity, using three standard models: an hourly rate for short-term or support work, a project-based fee for larger initiatives, and a retainer for long-term partnerships.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you work with B2B and B2C businesses?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Our team has 7+ years of combined experience across both B2B and B2C sectors, so we understand how each market buys, uses and expects to be supported.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Do you offer services for small businesses?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes, we serve businesses of all sizes. Our solutions are scalable and can be tailored to meet the specific needs and budget constraints of small businesses, startups, mid-sized companies, and large enterprises.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What happens after the project goes live?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Our commitment extends beyond completion. We provide ongoing support — website maintenance, managed IT, campaign management and helpdesk assistance — through comprehensive support services.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How quickly can you respond to my inquiry?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'We strive to respond to all inquiries within 24 business hours. For urgent matters, please call our office for immediate assistance during business hours.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <section className="section bg-white">
         <div className="container">
           <SectionTitle
