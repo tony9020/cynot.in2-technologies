@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { useState, useEffect, MouseEvent } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
@@ -41,6 +41,19 @@ const Navbar = ({ scrolled }: NavbarProps) => {
     setIsOpen(false);
   };
 
+  const { pathname } = useLocation();
+
+  // Logo click: always land on the home page hero (top).
+  // On another page, let React Router navigate (the route transition scrolls to top).
+  // Already on home: smoothly scroll back to the hero.
+  const handleLogoClick = (e: MouseEvent) => {
+    closeMenus();
+    if (pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -51,7 +64,7 @@ const Navbar = ({ scrolled }: NavbarProps) => {
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center z-10" onClick={closeMenus}>
+        <Link to="/" className="flex items-center z-10" onClick={handleLogoClick}>
           <Logo color={scrolled || isOpen ? 'dark' : 'light'} linked={false} />
           <span className={`ml-2 text-2xl font-bold ${scrolled || isOpen ? "text-black" : "text-white"}`}>
             CYNOT

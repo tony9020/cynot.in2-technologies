@@ -90,7 +90,7 @@ const Contact = () => {
     <>
       <SEO
         title="Contact Us"
-        description="Get in touch with Cynot Technologies in Thrissur, Kerala — email support@cynot.in or call +91 9020 555 800 to discuss your software, web, design or IT project."
+        description="Get in touch with Cynot Technologies in Thrissur, Kerala — email contact@cynot.in or call +91 9020 555 800 to discuss your software, web, design or IT project."
         path="/contact"
       />
       {/* Hero Banner */}
@@ -153,7 +153,11 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-xl mb-2">Email Us</h3>
                       <p className="text-neutral-600 mb-1">
-                        <span className="font-medium">Support &amp; General Enquiries:</span> <br />
+                        <span className="font-medium">General Enquiries:</span> <br />
+                        <a href="mailto:contact@cynot.in" className="text-primary-600 hover:underline">contact@cynot.in</a>
+                      </p>
+                      <p className="text-neutral-600 mb-1">
+                        <span className="font-medium">Support:</span> <br />
                         <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a>
                       </p>
                     </div>

@@ -26,7 +26,7 @@ Content is aligned with the company brochure: 7+ years of combined experience, 8
 
 ### Contact
 
-- Email: support@cynot.in
+- Email: contact@cynot.in (general) · support@cynot.in (service & support requests)
 - Phone: +91 9020 555 800
 - Location: Thrissur, Kerala, India
 

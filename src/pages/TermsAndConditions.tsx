@@ -27,7 +27,7 @@ const TermsAndConditions = () => (
       <strong>CYNOT TECHNOLOGIES PRIVATE LIMITED</strong> is a private limited company incorporated in
       India under the Companies Act, 2013 on 6 May 2024, CIN <strong>U62099KL2024PTC087538</strong>,
       registered office: Chaliechen House, Mangalassery, Koratti South, Mukundapuram, Thrissur 680308,
-      Kerala, India. Contact: <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>.
+      Kerala, India. Contact: <a href="mailto:contact@cynot.in" className="text-primary-600 hover:underline">contact@cynot.in</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>.
       We provide services to B2B and B2C clients in India and internationally.
     </P>
 
@@ -178,7 +178,7 @@ const TermsAndConditions = () => (
     <P>
       <strong>CYNOT TECHNOLOGIES PRIVATE LIMITED</strong> · CIN U62099KL2024PTC087538<br />
       Chaliechen House, Mangalassery, Koratti South, Mukundapuram, Thrissur 680308, Kerala, India<br />
-      Email: <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
+      Email: <a href="mailto:contact@cynot.in" className="text-primary-600 hover:underline">contact@cynot.in</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
     </P>
   </LegalPage>
 );
