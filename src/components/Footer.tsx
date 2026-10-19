@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer = () => {
@@ -22,25 +22,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center mt-6 space-x-4">
               <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/cynot.in" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
@@ -49,7 +31,7 @@ const Footer = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/company/cynot.in" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-neutral-400 hover:text-primary-400 transition-colors duration-200"
@@ -153,9 +135,7 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={20} className="text-primary-400 mr-3 mt-1 flex-shrink-0" />
                 <span className="text-neutral-300">
-                  Chaliechen House, Mangalassery<br />
-                  Koratti South, Mukundapuram<br />
-                  Thrissur 680308, Kerala, India
+                  Kerala, India
                 </span>
               </li>
               <li className="flex items-center">
