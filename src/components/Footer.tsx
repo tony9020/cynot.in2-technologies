@@ -166,8 +166,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-primary-400 mr-3 flex-shrink-0" />
-                <a href="mailto:tonychristopherofficial@gmail.com" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200">
-                  tonychristopherofficial@gmail.com
+                <a href="mailto:support@cynot.in" className="text-neutral-300 hover:text-primary-400 transition-colors duration-200">
+                  support@cynot.in
                 </a>
               </li>
             </ul>

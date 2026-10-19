@@ -26,7 +26,7 @@ Content is aligned with the company brochure: 7+ years of combined experience, 8
 
 ### Contact
 
-- Email: tonychristopherofficial@gmail.com
+- Email: support@cynot.in
 - Phone: +91 9020 555 800
 - Location: Thrissur, Kerala, India
 

@@ -170,7 +170,7 @@ const About = () => {
               <div>
                 <p className="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-1">Contact</p>
                 <p className="text-neutral-700">
-                  <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
+                  <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
                 </p>
               </div>
             </div>

@@ -30,7 +30,7 @@ const PrivacyPolicy = () => (
       Mangalassery, Koratti South, Mukundapuram, Thrissur 680308, Kerala, India.
     </P>
     <P>
-      Privacy questions or requests: <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>. Grievance Officer: Tony Christopher, Founder &amp; Tech Lead.
+      Privacy questions or requests: <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>. Grievance Officer: Tony Christopher, Founder &amp; Tech Lead.
     </P>
 
     <H2>2. Information we collect</H2>
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => (
       <LI>Withdraw marketing consent at any time, and raise a complaint with our grievance contact or the Data Protection Board.</LI>
     </ul>
     <P>
-      Write to <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> with the subject "Privacy Request". We acknowledge
+      Write to <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> with the subject "Privacy Request". We acknowledge
       requests within <strong>7 days</strong> and aim to resolve them within <strong>30 days</strong>.
     </P>
 
@@ -143,7 +143,7 @@ const PrivacyPolicy = () => (
       CIN: U62099KL2024PTC087538<br />
       Registered Office: Chaliechen House, Mangalassery, Koratti South, Mukundapuram, Thrissur 680308,
       Kerala, India<br />
-      Email: <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
+      Email: <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a>
     </P>
   </LegalPage>
 );

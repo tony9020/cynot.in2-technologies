@@ -88,7 +88,7 @@ const RefundPolicy = () => (
     <H2>2. Cancellation</H2>
     <H3>2.1 Before kickoff</H3>
     <P>
-      You may cancel before work starts by writing to <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a>. Any advance paid is
+      You may cancel before work starts by writing to <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a>. Any advance paid is
       refunded less <strong>5%</strong> administrative and payment-gateway charges (or the actual gateway
       fee if higher), processed within the timelines in section 3.
     </P>
@@ -191,7 +191,7 @@ const RefundPolicy = () => (
 
     <H2>6. How to request a cancellation or refund</H2>
     <ul className="list-disc pl-6 mb-4">
-      <LI>Email <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> with the subject "Cancellation / Refund Request".</LI>
+      <LI>Email <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> with the subject "Cancellation / Refund Request".</LI>
       <LI>Include: your name, company, invoice number(s), payment date and method, amount paid, and the reason (plus evidence for defect claims).</LI>
       <LI>We acknowledge within 2 business days and respond with a decision or any information we need within 5 business days.</LI>
       <LI>Approved refunds follow section 3.2. Escalations: Tony Christopher, Founder &amp; Tech Lead, at the same email address — we aim to resolve grievances within 30 days.</LI>
@@ -202,7 +202,7 @@ const RefundPolicy = () => (
     <P>
       <strong>CYNOT TECHNOLOGIES PRIVATE LIMITED</strong> · CIN U62099KL2024PTC087538<br />
       Chaliechen House, Mangalassery, Koratti South, Mukundapuram, Thrissur 680308, Kerala, India<br />
-      Email: <a href="mailto:tonychristopherofficial@gmail.com" className="text-primary-600 hover:underline">tonychristopherofficial@gmail.com</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a><br />
+      Email: <a href="mailto:support@cynot.in" className="text-primary-600 hover:underline">support@cynot.in</a> · Phone: <a href="tel:+919020555800" className="text-primary-600 hover:underline">+91 9020 555 800</a><br />
       Business hours: Monday–Friday, 9:00 AM – 8:00 PM IST (UTC+5:30)
     </P>
   </LegalPage>
